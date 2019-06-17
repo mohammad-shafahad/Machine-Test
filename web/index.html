@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script type="text/javascript">
+        function validate_form() {
+            if (document.user.fname.value == "") {
+                alert("Please fill in the 'First Name' box.");
+                return false;
+            }
+            if (document.user.lname.value == "") {
+                alert("Please enter last name");
+                return false;
+            }
+            
+ 
+ 
+ 			if (document.user.email.value == "") {
+ 				alert("Please fill in 'Your email' box.");
+                return false;
+
+ 			}
+             if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/).test(document.user.email.value)) {
+                alert("You have entered an invalid email address!")
+                return (false)
+            }
+            if (document.user.dob.value == "") {
+                alert("Please fill in the 'DOB' box.");
+                return false;
+            }
+            if (!(/^[0-9]{10}$/).test(document.user.mob.value)) {
+                alert("You have entered an invalid mobile number!")
+                return (false)
+            }
+            if (document.user.gender.value == "") {
+ 				alert("Please fill in the 'Your gender' box.");
+                return false;
+
+ 			}
+ 			
+    
+
+   
+
+			else{
+				alert("Successfully registered");
+                                
+			}  
+        }
+ 
+        
+ 
+ 
+    
+    </script>
+    <form name="user" method="post" action="registerCode.jsp" onsubmit="return validate_form();" id="sub">
+		<h1 style="text-align: center;">Registration Form</h1>
+		<table border="1" align="center" width=40% width="100%" >
+			<tr>
+				<td valign="top">Enter First Name</td>
+				<td>
+					<input type="text" name="fname"/>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top">Enter Last Name</td>
+				<td>
+					<input type="text" name="lname"/>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top">Enter Email</td>
+				<td>
+					<input type="email" name="email">
+				</td>
+			</tr>
+			<tr>
+				<td valign="top">Enter Date of birth</td>
+				<td>
+					<input type="date" name="dob">
+				</td>
+			</tr>
+			<tr>
+				<td valign="top">Enter Mobile number</td>
+				<td>
+					<input type="number" name="mob">
+				</td>
+			</tr>
+			<tr>
+				<td valign="top">Designation</td>
+				<td>
+                    <select name="designation">
+					
+					
+					<option value="Systems Engineer">Systems Engineer</option>
+					<option value="Senior Systems Engineer">Senior Systems Engineer</option>
+					<option value="Technology Analyst">Technology Analyst</option>
+					<option value="Technology Lead">Technology Lead</option>
+					<option value="Project Manager">Project Manager</option>
+					 
+ 
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top">Gender</td>
+				<td>
+					Male<input type="radio" name="gender" value="male" />
+					Female<input type="radio" name="gender" value="female" />
+				</td>
+			</tr>
+			<tr>
+				<td valign="top">Hobbies</td>
+				<td>
+					<input type="checkbox" name="hob" value="reading"> Reading<br>
+  					<input type="checkbox" name="hob" value="cricket"> Cricket<br>
+  					<input type="checkbox" name="hob" value="vollyball">Vollyball <br>
+  					<input type="checkbox" name="hob" value="swimming"> Swimming<br>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" name="submit" value="submit" style="margin-left: 40%;" />
+				</td>
+			</tr>
+		</table>
+		<br><br>
+		<a href="show.jsp"><h2 style="text-align: center;">Display Data</h2></a>
+</form>
+    
+    </body>
+</html>
